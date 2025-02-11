@@ -25,43 +25,67 @@
             margin-bottom: 20px;
             display: block;
         }
+        .mobile-view {
+            display: none;
+            padding: 20px;
+        }
+        .mobile-view a {
+            font-size: 20px;
+            color: blue;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="portfolio-container">
-        
-        <img src="portfolio_images/page_1.jpg" alt="Portfolio Page 1">
-        <img src="portfolio_images/page_2.jpg" alt="Portfolio Page 2">
-        <img src="portfolio_images/page_3.jpg" alt="Portfolio Page 3">
-        <img src="portfolio_images/page_4.jpg" alt="Portfolio Page 4">
-        <img src="portfolio_images/page_5.jpg" alt="Portfolio Page 5">
-        <img src="portfolio_images/page_6.jpg" alt="Portfolio Page 6">
-        <img src="portfolio_images/page_7.jpg" alt="Portfolio Page 7">
-        <img src="portfolio_images/page_8.jpg" alt="Portfolio Page 8">
-        <img src="portfolio_images/page_9.jpg" alt="Portfolio Page 9">
-        <img src="portfolio_images/page_10.jpg" alt="Portfolio Page 10">
-        <img src="portfolio_images/page_11.jpg" alt="Portfolio Page 11">
-        <img src="portfolio_images/page_12.jpg" alt="Portfolio Page 12">
-        <img src="portfolio_images/page_13.jpg" alt="Portfolio Page 13">
-        <img src="portfolio_images/page_14.jpg" alt="Portfolio Page 14">
-        <img src="portfolio_images/page_15.jpg" alt="Portfolio Page 15">
-        <img src="portfolio_images/page_16.jpg" alt="Portfolio Page 16">
-        <img src="portfolio_images/page_17.jpg" alt="Portfolio Page 17">
-        <img src="portfolio_images/page_18.jpg" alt="Portfolio Page 18">
-        <img src="portfolio_images/page_19.jpg" alt="Portfolio Page 19">
-        <img src="portfolio_images/page_20.jpg" alt="Portfolio Page 20">
-        <img src="portfolio_images/page_21.jpg" alt="Portfolio Page 21">
-        <img src="portfolio_images/page_22.jpg" alt="Portfolio Page 22">
-        <img src="portfolio_images/page_23.jpg" alt="Portfolio Page 23">
-        <img src="portfolio_images/page_24.jpg" alt="Portfolio Page 24">
-        <img src="portfolio_images/page_25.jpg" alt="Portfolio Page 25">
-        <img src="portfolio_images/page_26.jpg" alt="Portfolio Page 26">
-        <img src="portfolio_images/page_27.jpg" alt="Portfolio Page 27">
-        <img src="portfolio_images/page_28.jpg" alt="Portfolio Page 28">
-        <img src="portfolio_images/page_29.jpg" alt="Portfolio Page 29">
-        <img src="portfolio_images/page_30.jpg" alt="Portfolio Page 30">
-
-        <p><a href="portofolio.pdf" download>Download Full Portfolio (PDF)</a></p>
+    <div class="desktop-view">
+        <div class="portfolio-container">
+            <img src="portfolio_images/page_1.jpg" alt="Portfolio Page 1">
+            <img src="portfolio_images/page_2.jpg" alt="Portfolio Page 2">
+            <img src="portfolio_images/page_3.jpg" alt="Portfolio Page 3">
+            <img src="portfolio_images/page_4.jpg" alt="Portfolio Page 4">
+            <img src="portfolio_images/page_5.jpg" alt="Portfolio Page 5">
+            <img src="portfolio_images/page_6.jpg" alt="Portfolio Page 6">
+            <img src="portfolio_images/page_7.jpg" alt="Portfolio Page 7">
+            <img src="portfolio_images/page_8.jpg" alt="Portfolio Page 8">
+            <img src="portfolio_images/page_9.jpg" alt="Portfolio Page 9">
+            <img src="portfolio_images/page_10.jpg" alt="Portfolio Page 10">
+            <img src="portfolio_images/page_11.jpg" alt="Portfolio Page 11">
+            <img src="portfolio_images/page_12.jpg" alt="Portfolio Page 12">
+            <img src="portfolio_images/page_13.jpg" alt="Portfolio Page 13">
+            <img src="portfolio_images/page_14.jpg" alt="Portfolio Page 14">
+            <img src="portfolio_images/page_15.jpg" alt="Portfolio Page 15">
+            <img src="portfolio_images/page_16.jpg" alt="Portfolio Page 16">
+            <img src="portfolio_images/page_17.jpg" alt="Portfolio Page 17">
+            <img src="portfolio_images/page_18.jpg" alt="Portfolio Page 18">
+            <img src="portfolio_images/page_19.jpg" alt="Portfolio Page 19">
+            <img src="portfolio_images/page_20.jpg" alt="Portfolio Page 20">
+            <img src="portfolio_images/page_21.jpg" alt="Portfolio Page 21">
+            <img src="portfolio_images/page_22.jpg" alt="Portfolio Page 22">
+            <img src="portfolio_images/page_23.jpg" alt="Portfolio Page 23">
+            <img src="portfolio_images/page_24.jpg" alt="Portfolio Page 24">
+            <img src="portfolio_images/page_25.jpg" alt="Portfolio Page 25">
+            <img src="portfolio_images/page_26.jpg" alt="Portfolio Page 26">
+            <img src="portfolio_images/page_27.jpg" alt="Portfolio Page 27">
+            <img src="portfolio_images/page_28.jpg" alt="Portfolio Page 28">
+            <img src="portfolio_images/page_29.jpg" alt="Portfolio Page 29">
+            <img src="portfolio_images/page_30.jpg" alt="Portfolio Page 30">
+        </div>
     </div>
+
+    <div class="mobile-view">
+        <p>This portfolio is best viewed as a PDF on mobile devices.</p>
+        <a href="portofolio.pdf" target="_blank">📄 View Portfolio PDF</a>
+    </div>
+
+    <script>
+        function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
+        if (isMobileDevice()) {
+            document.querySelector(".desktop-view").style.display = "none";
+            document.querySelector(".mobile-view").style.display = "block";
+        }
+    </script>
 </body>
 </html>
